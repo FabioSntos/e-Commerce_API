@@ -1,0 +1,28 @@
+{
+  "type": "module",
+  "name": "e-Commerce_API",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabioSntos/e-Commerce_API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FabioSntos/e-Commerce_API/issues"
+  },
+  "homepage": "https://github.com/FabioSntos/e-Commerce_API#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "sucrase": "^3.18.1"
+  }
+}
