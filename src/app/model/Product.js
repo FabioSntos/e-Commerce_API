@@ -1,10 +1,27 @@
-const { DataTypes } = require('sequelize');
+import Sequelize, { Model } from 'sequelize';
 
-class Product {
+class Product extends Model {
   static init(sequelize) {
     super.init(
       {
-        id: {
+        name: Sequelize.STRING,
+        descricao: Sequelize.STRING,
+        preco: Sequelize.INTEGER,
+        disponivel: Sequelize.INTEGER,
+        destaque: Sequelize.INTEGER,
+      },
+      {
+        sequelize,
+      },
+    );
+    return this;
+  }
+}
+
+export default Product;
+
+/*
+id: {
           type: DataTypes.INTEGER,
           autoIncrement: true,
           allowNull: false,
@@ -14,14 +31,24 @@ class Product {
           type: DataTypes.STRING,
           allowNull: false,
         },
-      },
-      {
-        sequelize,
-        underscored: true,
-        tableName: 'products',
-      },
-    );
-  }
-}
-
-module.exports = Product;
+        descricao: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        preco: {
+          type: DataTypes.DOUBLE,
+          allowNull: false,
+        },
+        disponivel: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
+        destaque: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
+        descricao: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+*/

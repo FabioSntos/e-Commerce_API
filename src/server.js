@@ -4,7 +4,7 @@ import connection from './config/connection';
 const conect = async () => {
   try {
     await connection.authenticate();
-    console.log('teste');
+    console.log('db on');
   } catch (error) {
     console.log(error);
   }

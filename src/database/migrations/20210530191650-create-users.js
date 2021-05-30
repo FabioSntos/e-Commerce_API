@@ -13,6 +13,22 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      descricao: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      preco: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      disponivel: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      destaque: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
     });
   },
 
