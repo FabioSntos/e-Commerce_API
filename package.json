@@ -19,10 +19,13 @@
   "homepage": "https://github.com/FabioSntos/e-Commerce_API#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mysql2": "^2.2.5"
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "nodemon": "^2.0.7",
+    "sequelize-cli": "^6.2.0",
     "sucrase": "^3.18.1"
   }
 }
