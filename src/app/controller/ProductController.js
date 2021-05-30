@@ -16,17 +16,20 @@ class ProductController {
         message: 'Falha ao cadastrar produto',
       });
     }
-    /*
+
     const productExist = await Product.findOne({
       where: { name: req.body.name },
     });
 
-    if (productExist) res.status(400).json({ error: 'Produto cadastrado' });
-    */
-    const { name, descricao, preco, disponivel, destaque } =
+    if (productExist) {
+      return res.status(400).json({ error: 'Produto cadastrado' });
+    }
+
+    const { name, descricao, preco, disponivel, destaque, id } =
       await Product.create(req.body);
 
     return res.json({
+      id,
       name,
       descricao,
       preco,
@@ -34,7 +37,7 @@ class ProductController {
       destaque,
     });
   }
-  /*
+
   async update(req, res) {
     const schema = await Yup.object().shape({
       name: Yup.string().required(),
@@ -54,7 +57,10 @@ class ProductController {
       destaque,
     });
   }
-  */
+  async getAll(req, res) {
+    const all = await Product.findAll();
+    return res.json(all);
+  }
 }
 
 export default new ProductController();

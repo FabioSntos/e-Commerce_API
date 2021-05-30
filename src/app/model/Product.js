@@ -1,4 +1,5 @@
-import Sequelize, { Model } from 'sequelize';
+import { Sequelize } from 'sequelize';
+import Model from './baseModel';
 
 class Product extends Model {
   static init(sequelize) {
@@ -12,6 +13,8 @@ class Product extends Model {
       },
       {
         sequelize,
+        underscored: true,
+        tableName: 'products',
       },
     );
     return this;
@@ -19,36 +22,3 @@ class Product extends Model {
 }
 
 export default Product;
-
-/*
-id: {
-          type: DataTypes.INTEGER,
-          autoIncrement: true,
-          allowNull: false,
-          primaryKey: true,
-        },
-        name: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
-        descricao: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
-        preco: {
-          type: DataTypes.DOUBLE,
-          allowNull: false,
-        },
-        disponivel: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-        },
-        destaque: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-        },
-        descricao: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
-*/
