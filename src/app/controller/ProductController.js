@@ -45,7 +45,7 @@ class ProductController {
       message: 'erro ao remover arquivo',
     });
   }
-  
+
   async update(req, res) {
     const schema = await Yup.object().shape({
       name: Yup.string().required(),
@@ -72,32 +72,20 @@ class ProductController {
 
 
   async returnProducts(req, res) {
-      const products = await Product.findAll()
-      return res.json(products)
+    const products = await Product.findAll()
+    return res.json(products)
   };
 
 
-  async ProductById(req, res){
-    const {id} = req.params
+  async ProductById(req, res) {
+    const { id } = req.params
     const selectedProduct = await Product.findByPk(id)
-    if (!selectedProduct){
-      return res.status(404).json({error: 'Produto não encontrado'})
+    if (!selectedProduct) {
+      return res.status(404).json({ error: 'Produto não encontrado' })
     }
-    return res.status(200).json({selectedProduct})
+    return res.status(200).json({ selectedProduct })
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
+  }
 
 }
 
