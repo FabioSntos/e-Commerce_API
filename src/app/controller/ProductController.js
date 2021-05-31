@@ -39,9 +39,9 @@ class ProductController {
   async delete(req, res) {
     const { id } = req.params;
 
-    await Product.findByPk(id);
-    if (id === null || id === undefined)
-      return res.status(404).json({
+    const idProduto = await Product.findByPk(id);
+    if (!idProduto)
+      return res.status(401).json({
         message: 'erro ao remover arquivo',
       });
 
