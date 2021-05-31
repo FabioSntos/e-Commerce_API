@@ -40,15 +40,9 @@ class ProductController {
     const { id } = req.params;
 
     const idProduto = await Product.findByPk(id);
-    if (!idProduto)
-      return res.status(401).json({
-        message: 'erro ao remover arquivo',
-      });
-
-    await Product.destroy({ where: { id } });
-
-    return res.json({
-      message: 'produto removido',
+    if (!idProduto) console.log(id);
+    return res.status(401).json({
+      message: 'erro ao remover arquivo',
     });
   }
 
