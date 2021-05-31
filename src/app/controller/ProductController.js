@@ -29,12 +29,26 @@ class ProductController {
       await Product.create(req.body);
 
     return res.json({
-      id,
       name,
       descricao,
       preco,
       disponivel,
       destaque,
+    });
+  }
+  async delete(req, res) {
+    const { id } = req.params;
+
+    await Product.findByPk(id);
+    if (id === null || id === undefined)
+      return res.status(404).json({
+        message: 'erro ao remover arquivo',
+      });
+
+    await Product.destroy({ where: { id } });
+
+    return res.json({
+      message: 'produto removido',
     });
   }
 

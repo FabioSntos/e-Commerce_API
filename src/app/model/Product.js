@@ -5,6 +5,10 @@ class Product extends Model {
   static init(sequelize) {
     super.init(
       {
+        id: {
+          primaryKey: true,
+          type: Sequelize.INTEGER,
+        },
         name: Sequelize.STRING,
         descricao: Sequelize.STRING,
         preco: Sequelize.INTEGER,
