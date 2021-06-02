@@ -14,6 +14,7 @@ class Product extends Model {
         preco: Sequelize.INTEGER,
         disponivel: Sequelize.INTEGER,
         destaque: Sequelize.INTEGER,
+        estoque: Sequelize.INTEGER
         
       },
       {
