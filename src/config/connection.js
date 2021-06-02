@@ -6,4 +6,7 @@ const connection = new Sequelize(database);
 Department.init(connection);
 Product.init(connection);
 
+Department.associate(connection.models)
+Product.associate(connection.models)
+
 export default connection;
