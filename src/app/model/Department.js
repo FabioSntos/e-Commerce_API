@@ -10,7 +10,7 @@ class Department extends Model {
                     type: Sequelize.INTEGER
                 },
                 nameDepartment: Sequelize.STRING,
-                allowNull: false,
+                
 
             }, 
             {
@@ -21,6 +21,10 @@ class Department extends Model {
         )
         return this
     }
+    
+    static associate(models){
+        Department.hasMany(models.Product, { foreignKey: 'id_dep'})
+      }
 
 }
 
