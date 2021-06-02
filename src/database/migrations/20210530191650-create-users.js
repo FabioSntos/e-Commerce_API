@@ -29,6 +29,17 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      estoque: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      idDep: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'departments', key: 'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
