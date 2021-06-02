@@ -14,6 +14,7 @@ class Product extends Model {
         preco: Sequelize.INTEGER,
         disponivel: Sequelize.INTEGER,
         destaque: Sequelize.INTEGER,
+        estoque: Sequelize.INTEGER,
       },
       {
         sequelize,
@@ -22,6 +23,10 @@ class Product extends Model {
       },
     );
     return this;
+  }
+
+  static associate(models){
+    this.belongsTo(models.Department)
   }
 }
 
