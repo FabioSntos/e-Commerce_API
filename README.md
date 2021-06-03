@@ -89,7 +89,7 @@ To get a local copy up and running follow these simple example steps.
    ```
 4. docker Image
    ```sh
-   docker run -d --name system-p 3306:3306 -e MYSQL_ROOT_PASSWORD=pass -e     MYSQL_DATABASE=system mysql:8.0.25 --default-authentication-plugin=mysql_native_password';
+   docker run -d --name sistema -p 3307:3307 -e MYSQL_ROOT_PASSWORD=pass -e MYSQL_DATABASE=sistema mysql:8.0.25 --default-authentication-plugin=mysql_native_password
    ```
 5. Run Docker image
    ```JS
