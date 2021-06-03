@@ -108,6 +108,17 @@ To get a local copy up and running follow these simple example steps.
    const API_KEY = 'ENTER YOUR API';
    ```   
 
+## Test Case
+
+|   Endpoint   	|  HTTP  	|                        Proposta                        	|                Test                	|                                                                    Body example                                                                    	|
+|:------------:	|:------:	|:------------------------------------------------------:	|:----------------------------------:	|:--------------------------------------------------------------------------------------------------------------------------------------------------:	|
+|   /produto   	|   GET  	|        Retorno da lista de produtos existentes.        	|    http://localhost:3333/produto   	|                                                                                                                                                    	|
+| /produto/:id 	|   GET  	|              Retorno de produto específico             	|  http://localhost:3333/produto/:id 	|                                                                                                                                                    	|
+|  /remove/:id 	| DELETE 	|            Remoção de um produto específico            	|  http://localhost:3333/remove/:id  	|                                                                                                                                                    	|
+|    /store    	|  POST  	|            Inclusão de um produto específico           	|     http://localhost:3333/store    	|        {"name":"Calça Corinthians", "descricao":"Vai timão", "preco": "200", "disponivel":"1", "destaque":"1", "estoque":"1", "id_dep": "5"}       	|
+| /alterar/:id 	|   PUT  	|                  Alteração de produto                  	|  http://localhost:3333/alterar/:id 	| {"name":"Calça Santos", "descricao":"Caiu na vila o peixe fuzila", "preco": "200", "disponivel":"1", "destaque":"1", "estoque":"1", "id_dep": "5"} 	|
+|    /deptos   	|   GET  	|            Retorno de todos os departamentos           	|     http://localhost:3333/deptos   	|                                                                                                                                                    	|
+|  /deptos/:id 	|   GET  	| Retorno de um departamento e todos produtos associados 	|  http://localhost:3333/deptos/:id  	|                                                                                                                                                    	|
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
