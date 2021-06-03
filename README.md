@@ -89,24 +89,20 @@ To get a local copy up and running follow these simple example steps.
    ```
 4. docker Image
    ```sh
-   docker run -d --name sistema -p 3307:3307 -e MYSQL_ROOT_PASSWORD=pass -e MYSQL_DATABASE=sistema mysql:8.0.25 --default-authentication-plugin=mysql_native_password
+   docker run -d --name sistema -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pass -e MYSQL_DATABASE=sistema mysql:8.0.25 --default-authentication-plugin=mysql_native_password
    ```
-5. Run Docker image
+5. Run migrations
    ```JS
-   const API_KEY = 'ENTER YOUR API';
+   npx sequelize db:migrate
    ```
-6. Enter your API in `Run migrations`
+6. Run seeds
    ```JS
-   const API_KEY = 'ENTER YOUR API';
+   npx sequelize db:seed:all
    ```
-7. Enter your API in `Run seeds`
+7. npm run dev
    ```JS
-   const API_KEY = 'ENTER YOUR API';
+   npm run dev
    ```
-7. Enter your API in `Start the project`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```   
 
 ## License
 
