@@ -9,6 +9,7 @@ class ProductController {
       preco: Yup.number().required(),
       disponivel: Yup.number().required(),
       destaque: Yup.number().required(),
+      id_dep: Yup.number().required(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -25,7 +26,7 @@ class ProductController {
       return res.status(400).json({ error: 'Produto cadastrado' });
     }
 
-    const { name, descricao, preco, disponivel, destaque, id } =
+    const { name, descricao, preco, disponivel, destaque, id, id_dep } =
       await Product.create(req.body);
 
     return res.json({
@@ -34,6 +35,7 @@ class ProductController {
       preco,
       disponivel,
       destaque,
+      id_dep
     });
   }
   async delete(req, res) {
@@ -60,13 +62,14 @@ class ProductController {
       preco: Yup.number().required(),
       disponivel: Yup.number().required(),
       destaque: Yup.number().required(),
+      id_dep: Yup.number().required()
     });
     if (!idProduto)
       return res.status(401).json({
         message: 'erro ao alterar produto',
       });
     else {
-      const { id, name, descricao, preco, disponivel, destaque } =
+      const { id, name, descricao, preco, disponivel, destaque, id_dep } =
         await idProduto.update(req.body);
       return res.json({
         id,
@@ -75,6 +78,7 @@ class ProductController {
         descricao,
         disponivel,
         destaque,
+        id_dep
       });
     }
   }

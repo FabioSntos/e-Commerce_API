@@ -10,7 +10,6 @@ class Department extends Model {
                     type: Sequelize.INTEGER
                 },
                 nameDepartment: Sequelize.STRING,
-                
 
             }, 
             {

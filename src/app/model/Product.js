@@ -15,6 +15,7 @@ class Product extends Model {
         disponivel: Sequelize.INTEGER,
         destaque: Sequelize.INTEGER,
         estoque: Sequelize.INTEGER,
+        id_dep: Sequelize.INTEGER
       },
       {
         sequelize,
@@ -26,7 +27,7 @@ class Product extends Model {
   }
 
   static associate(models){
-    this.belongsTo(models.Department)
+    this.belongsTo(models.Department, { foreignKey: 'id_dep'})
   }
 }
 
