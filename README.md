@@ -1,14 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
- 
   <h3 align="center">Ecommerce api</h3>
-
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <br />
-  </p>
 </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -35,16 +28,6 @@
 ## About The Project
 
 This is a Ecommerce Project developed with Node.js and Mysql, it's possible add new products, change, delete & get them.  
-
-Here's why:
-
-- Your time should be focused on creating something amazing. A project that solves a problem and helps others
-- You shouldn't be doing the same tasks over and over like creating a README from scratch
-- You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
 ### Built With
 
@@ -89,24 +72,22 @@ To get a local copy up and running follow these simple example steps.
    ```
 4. docker Image
    ```sh
-   docker run -d --name sistema -p 3307:3307 -e MYSQL_ROOT_PASSWORD=pass -e MYSQL_DATABASE=sistema mysql:8.0.25 --default-authentication-plugin=mysql_native_password
+   docker run -d --name sistema -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pass -e MYSQL_DATABASE=sistema mysql:8.0.25 --default-authentication-plugin=mysql_native_password
    ```
-5. Run Docker image
+5. Run migrations
    ```JS
-   const API_KEY = 'ENTER YOUR API';
+   npx sequelize db:migrate
    ```
-6. Enter your API in `Run migrations`
+6. Run seeds
    ```JS
-   const API_KEY = 'ENTER YOUR API';
+   npx sequelize db:seed:all
    ```
-7. Enter your API in `Run seeds`
+7. start the project
    ```JS
-   const API_KEY = 'ENTER YOUR API';
+   npm run dev
    ```
-7. Enter your API in `Start the project`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```   
+
+### Test Case
 
 ## Test Case
 
