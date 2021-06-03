@@ -15,3 +15,6 @@ routes.put('/alterar/:id', ProductController.update);
 routes.get('/deptos', DepartmentController.returnDept)
 routes.get ('/deptos/:id', DepartmentController.productByDep)
 export default routes;
+
+
+// fix
