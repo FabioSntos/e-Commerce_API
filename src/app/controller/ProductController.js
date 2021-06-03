@@ -9,6 +9,8 @@ class ProductController {
       preco: Yup.number().required(),
       disponivel: Yup.number().required(),
       destaque: Yup.number().required(),
+      estoque: Yup.number().required(),
+
       id_dep: Yup.number().required(),
     });
 
@@ -26,7 +28,7 @@ class ProductController {
       return res.status(400).json({ error: 'Produto cadastrado' });
     }
 
-    const { name, descricao, preco, disponivel, destaque, id, id_dep } =
+    const { name, descricao, preco, disponivel, destaque, id, id_dep, estoque } =
       await Product.create(req.body);
 
     return res.json({
@@ -34,6 +36,7 @@ class ProductController {
       descricao,
       preco,
       disponivel,
+      estoque,
       destaque,
       id_dep
     });
@@ -62,6 +65,7 @@ class ProductController {
       preco: Yup.number().required(),
       disponivel: Yup.number().required(),
       destaque: Yup.number().required(),
+      estoque: Yup.number().required(),
       id_dep: Yup.number().required()
     });
     if (!idProduto)
@@ -69,7 +73,7 @@ class ProductController {
         message: 'erro ao alterar produto',
       });
     else {
-      const { id, name, descricao, preco, disponivel, destaque, id_dep } =
+      const { id, name, descricao, preco, disponivel, destaque,estoque, id_dep } =
         await idProduto.update(req.body);
       return res.json({
         id,
@@ -77,6 +81,7 @@ class ProductController {
         preco,
         descricao,
         disponivel,
+        estoque,
         destaque,
         id_dep
       });
