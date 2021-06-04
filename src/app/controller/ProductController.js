@@ -16,7 +16,7 @@ class ProductController {
 
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({
-        message: 'Falha ao cadastrar produto',
+        message: 'Falha ao cadastrar produto; Por favor corrija os dados para alteração',
       });
     }
 
@@ -46,12 +46,12 @@ class ProductController {
 
     const idProduto = await Product.findByPk(id);
     if (!idProduto)
-      return res.status(401).json({
-        message: 'erro ao remover arquivo',
+      return res.status(404).json({
+        message: 'Erro ao remover; ID selecionado não existe na base',
       });
     await Product.destroy({ where: { id } });
     return res.json({
-      message: 'produto removido',
+      message: 'Produto removido com sucesso',
     });
   }
 
@@ -68,10 +68,17 @@ class ProductController {
       estoque: Yup.number().required(),
       id_dep: Yup.number().required()
     });
+    
     if (!idProduto)
       return res.status(404).json({
-        message: 'erro ao alterar produto',
+        message: 'Erro ao alterar o produto; ID selecionado não existe em nossa base',
       });
+
+      if (!(await schema.isValid(req.body))) {
+        return res.status(400).json({
+          message: 'Falha na validação; Por favor corrija os dados para alteração',
+        });
+      }
     else {
       const { id, name, descricao, preco, disponivel, destaque,estoque, id_dep } =
         await idProduto.update(req.body);
