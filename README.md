@@ -100,6 +100,11 @@ To get a local copy up and running follow these simple example steps.
 | /alterar/:id 	|   PUT  	|                  Alteração de produto                  	|  http://localhost:3333/alterar/:id 	| {"name":"Calça Santos", "descricao":"Caiu na vila o peixe fuzila", "preco": "200", "disponivel":"1", "destaque":"1", "estoque":"1", "id_dep": "5"} 	|
 |    /deptos   	|   GET  	|            Retorno de todos os departamentos           	|     http://localhost:3333/deptos   	|                                                                                                                                                    	|
 |  /deptos/:id 	|   GET  	| Retorno de um departamento e todos produtos associados 	|  http://localhost:3333/deptos/:id  	|                                                                                                                                                    	|
+
+
+### Seeds Data
+In our seeds you will find a total of 9 departments and 9 products; Some departments have more than one product attached and others are empty. For test cases, you can use our seeds for GET and PUT, and if you use POST, the return will be an object of ID 10. Have fun!
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
