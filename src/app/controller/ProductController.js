@@ -25,7 +25,7 @@ class ProductController {
     });
 
     if (productExist) {
-      return res.status(400).json({ error: 'Produto cadastrado' });
+      return res.status(400).json({ error: 'Produto já existe no sistema' });
     }
 
     const { name, descricao, preco, disponivel, destaque, id, id_dep, estoque } =
@@ -69,7 +69,7 @@ class ProductController {
       id_dep: Yup.number().required()
     });
     if (!idProduto)
-      return res.status(401).json({
+      return res.status(404).json({
         message: 'erro ao alterar produto',
       });
     else {
